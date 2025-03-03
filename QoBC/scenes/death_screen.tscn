@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgsjvb6um06s0"]
+
+[ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_5aq4h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1dxe"]
+font_size = 60
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5aq4h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 600.0
+color = Color(0.376612, 0.567656, 0.780066, 0.282353)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 38.0
+offset_right = 483.0
+offset_bottom = 131.0
+text = "You Died"
+label_settings = SubResource("LabelSettings_y1dxe")
+horizontal_alignment = 1
+
+[node name="RespawnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 250.0
+offset_right = 444.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 25
+text = "Respawn"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 397.0
+offset_right = 446.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 25
+text = "Quit Game"
+
+[connection signal="pressed" from="RespawnButton" to="." method="_on_respawn_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

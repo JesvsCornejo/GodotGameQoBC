@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtntnclll530r"]
+
+[ext_resource type="Script" path="res://scripts/stamina_pickup.gd" id="1_blb6d"]
+[ext_resource type="Texture2D" uid="uid://b7gy4whm04fek" path="res://assets/pickups/stamina_pickup.png" id="2_es5nx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdb2f"]
+radius = 7.0
+
+[node name="StaminaPickup" type="Area2D"]
+script = ExtResource("1_blb6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.004, 0.004)
+texture = ExtResource("2_es5nx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cdb2f")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

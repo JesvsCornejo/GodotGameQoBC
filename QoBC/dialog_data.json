@@ -1,0 +1,9 @@
+{
+	"angel_npc": {
+		"intro": "Greetings, traveler. How can I assist you?",
+		"options": [
+			{ "id": "give_quests", "text": "I need help with a quest.", "action": "give_quests" },
+			{ "id": "exit", "text": "Goodbye.", "action": "exit" }
+		]
+	}
+}

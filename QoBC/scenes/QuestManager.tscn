@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://daxsdimgy26p6"]
+
+[ext_resource type="Script" path="res://scripts/quest_manager.gd" id="1_fjmag"]
+
+[node name="QuestManager" type="Node"]
+script = ExtResource("1_fjmag")

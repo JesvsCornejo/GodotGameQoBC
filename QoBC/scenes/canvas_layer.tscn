@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://blfe7x1t3kpkb"]
+
+[ext_resource type="Texture2D" uid="uid://qkhfr3hwg8s1" path="res://assets/BarsPackage/Bars/EmplyBar.png" id="1_37pgl"]
+[ext_resource type="Texture2D" uid="uid://dewjtey84koh5" path="res://assets/BarsPackage/Bars/HealthFill.png" id="2_qpb21"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="3_214m8"]
+[ext_resource type="Texture2D" uid="uid://d0wy622onn50g" path="res://assets/BarsPackage/Bars/Heart.png" id="4_31570"]
+[ext_resource type="Script" path="res://scripts/stamina_bar.gd" id="5_q8nd1"]
+[ext_resource type="Texture2D" uid="uid://v7uleqxcerwa" path="res://assets/BarsPackage/Bars/Lighting bolt.png" id="6_ebk3d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_igjgi"]
+load_path = "res://.godot/imported/EmplyBar.png-f012f35948d99bf9f1d4645ca2b41dbd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6xek7"]
+load_path = "res://.godot/imported/EnrgyFill.png-86380a273c48598dec159419ad2a71a3.ctex"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureHealthBar" type="TextureProgressBar" parent="."]
+offset_left = 37.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 77.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = ExtResource("1_37pgl")
+texture_progress = ExtResource("2_qpb21")
+script = ExtResource("3_214m8")
+
+[node name="healthRegenTimer" type="Timer" parent="TextureHealthBar"]
+
+[node name="TextureRect" type="TextureRect" parent="TextureHealthBar"]
+layout_mode = 0
+offset_left = -33.0
+offset_right = -8.0
+offset_bottom = 23.0
+texture = ExtResource("4_31570")
+expand_mode = 1
+
+[node name="TextureStaminaBar" type="TextureProgressBar" parent="."]
+offset_left = 37.0
+offset_top = 88.0
+offset_right = 209.0
+offset_bottom = 107.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = SubResource("CompressedTexture2D_igjgi")
+texture_progress = SubResource("CompressedTexture2D_6xek7")
+script = ExtResource("5_q8nd1")
+
+[node name="staminaRegenTimer" type="Timer" parent="TextureStaminaBar"]
+wait_time = 0.2
+
+[node name="TextureRect" type="TextureRect" parent="TextureStaminaBar"]
+layout_mode = 0
+offset_left = -31.0
+offset_top = -5.0
+offset_right = -13.0
+offset_bottom = 20.0
+texture = ExtResource("6_ebk3d")
+expand_mode = 1
+
+[node name="runningDepleteTimer" type="Timer" parent="TextureStaminaBar"]
+wait_time = 0.2

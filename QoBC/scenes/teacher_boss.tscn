@@ -1,0 +1,223 @@
+[gd_scene load_steps=30 format=3 uid="uid://ophqfj623pnn"]
+
+[ext_resource type="Texture2D" uid="uid://csy0vnudglc8q" path="res://assets/Characters/old_man/16x16.png" id="1_2rimq"]
+[ext_resource type="Script" path="res://scripts/teacher_boss.gd" id="1_5awpx"]
+[ext_resource type="Texture2D" uid="uid://bxtbalbemjjnu" path="res://assets/Characters/old_man/magic_attack.png" id="1_61er5"]
+[ext_resource type="Texture2D" uid="uid://c2svu0jp6p6my" path="res://assets/Characters/old_man/magic_attack2.png" id="2_3js0g"]
+[ext_resource type="Texture2D" uid="uid://yeoqwsaytosg" path="res://assets/Characters/old_man/walking_angry.png" id="4_vjxq3"]
+[ext_resource type="Texture2D" uid="uid://qkhfr3hwg8s1" path="res://assets/BarsPackage/Bars/EmplyBar.png" id="6_iqekx"]
+[ext_resource type="Texture2D" uid="uid://dewjtey84koh5" path="res://assets/BarsPackage/Bars/HealthFill.png" id="7_e8wrt"]
+[ext_resource type="Script" path="res://scripts/teacher_boss_health_bar.gd" id="8_rd4qf"]
+[ext_resource type="AudioStream" uid="uid://bnmbswmsi5jdf" path="res://assets/sound/173126__replix__death-sound-male.wav" id="9_386ox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcden"]
+atlas = ExtResource("1_61er5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xebdk"]
+atlas = ExtResource("1_61er5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo1c1"]
+atlas = ExtResource("1_61er5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qni2m"]
+atlas = ExtResource("1_61er5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic485"]
+atlas = ExtResource("1_61er5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaaod"]
+atlas = ExtResource("1_61er5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weryr"]
+atlas = ExtResource("1_61er5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpvex"]
+atlas = ExtResource("2_3js0g")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecwhe"]
+atlas = ExtResource("1_2rimq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjq6g"]
+atlas = ExtResource("1_2rimq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui8b5"]
+atlas = ExtResource("1_2rimq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj1q7"]
+atlas = ExtResource("1_2rimq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itqtv"]
+atlas = ExtResource("4_vjxq3")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm51m"]
+atlas = ExtResource("4_vjxq3")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkdsf"]
+atlas = ExtResource("4_vjxq3")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hsiu"]
+atlas = ExtResource("4_vjxq3")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlmst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcden")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xebdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo1c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qni2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic485")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaaod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weryr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpvex")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecwhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjq6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui8b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj1q7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itqtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm51m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkdsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hsiu")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tltqu"]
+radius = 13.0384
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x0d3d"]
+radius = 66.0303
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhogi"]
+radius = 15.0333
+
+[node name="TeacherBoss" type="CharacterBody2D" groups=["teacher boss"]]
+script = ExtResource("1_5awpx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.6875, 2.625)
+sprite_frames = SubResource("SpriteFrames_qlmst")
+animation = &"death"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tltqu")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_x0d3d")
+
+[node name="hurtBox" type="Area2D" parent="." groups=["teacher boss"]]
+
+[node name="hurtBox" type="CollisionShape2D" parent="hurtBox"]
+shape = SubResource("CircleShape2D_jhogi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -211.0
+offset_top = 19.0
+offset_right = 210.0
+offset_bottom = 41.0
+grow_horizontal = 2
+nine_patch_stretch = true
+texture_under = ExtResource("6_iqekx")
+texture_progress = ExtResource("7_e8wrt")
+script = ExtResource("8_rd4qf")
+
+[node name="teacherName" type="Label" parent="CanvasLayer"]
+offset_left = 271.0
+offset_top = 45.0
+offset_right = 311.0
+offset_bottom = 68.0
+text = "Mr. James"
+horizontal_alignment = 1
+
+[node name="teacherDescription" type="Label" parent="CanvasLayer"]
+offset_left = 250.0
+offset_top = 69.0
+offset_right = 371.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 10
+text = "Slayer of Students"
+horizontal_alignment = 1
+
+[node name="rangedAttackTimer" type="Timer" parent="."]
+
+[node name="deathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_386ox")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="finished" from="deathSound" to="." method="_on_death_sound_finished"]
